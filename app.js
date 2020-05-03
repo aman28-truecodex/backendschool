@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var port =process.env.PORT || 3000;
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -36,6 +37,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(2020);
+app.listen(port);
 console.log('server runninh');
 module.exports = app;
